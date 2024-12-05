@@ -20,4 +20,6 @@ View(health_data)
 
 # create a histogram of BMI using ggplot 
 ggplot(health_data, aes(x=BMI)) +
-  geom_histogram(binwidth=1 )
+  geom_histogram(binwidth=1, fill="blue", colour="green" ) +
+  labs(title="Mean height in Wales is higher than European average") +
+  theme_dark()
