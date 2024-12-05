@@ -28,4 +28,5 @@ ggplot(health_data, aes(x=BMI)) +
 val_cor <-health_data %>% select(BMI,Age,TotChol) %>%
  cor(use ="complete.obs")
 
+# make the plot
 ggcorr(val_cor, label = TRUE, label_alpha = TRUE)
