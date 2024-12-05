@@ -23,3 +23,9 @@ ggplot(health_data, aes(x=BMI)) +
   geom_histogram(binwidth=1, fill="blue", colour="green" ) +
   labs(title="Mean height in Wales is higher than European average") +
   theme_dark()
+
+# create a correlation plot
+val_cor <-health_data %>% select(BMI,Age,TotChol) %>%
+ cor(use ="complete.obs")
+
+ggcorr(val_cor, label = TRUE, label_alpha = TRUE)
