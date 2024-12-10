@@ -1,0 +1,37 @@
+---
+title: "Health Data Analysis"
+author: "Loraine Ndlovu"
+date: "2024-12-10"
+output: html
+---
+
+# Health Data Viz Analysis
+
+
+## Load the necessary libraries 
+
+```{r}
+library(tidyverse)
+library(GGally)
+library(readr)
+library(NHANES)
+```
+
+### Load in the NHANES Data 
+```{r}
+# Select the relevant colomns from the NHANES dataset
+health_data <- NHANES %>% select(BMI,Age,Gender, TotChol)
+summary(health_data)
+head(health_data) %>% View()
+```
+
+
+### Plot a histogram of BMI
+```{r}
+ggplot(health_data, aes(x=BMI)) +
+  geom_histogram(binwidth=1, fill="blue", colour="green" ) +
+  labs(title="Mean height in Wales is higher than European average") +
+  theme_dark()
+```
+
+Look at this guide to [Quarto](https://quarto.org/docs/guide)
