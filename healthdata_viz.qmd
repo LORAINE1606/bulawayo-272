@@ -22,7 +22,6 @@ library(NHANES)
 # Select the relevant colomns from the NHANES dataset
 health_data <- NHANES %>% select(BMI,Age,Gender, TotChol)
 summary(health_data)
-head(health_data) %>% View()
 ```
 
 
@@ -43,3 +42,7 @@ val_cor <-health_data %>% select(BMI,Age,TotChol) %>%
 # make the plot
 ggcorr(val_cor, label = TRUE, label_alpha = TRUE)
 # forgot to add this to quarto
+```
+
+
+Test
